@@ -13,7 +13,7 @@ function AddTodo() {
         <div class="col-4">
           <input type="date" />
         </div>
-        <div class="col-2">
+        <div class="col-1">
           <button
             type="button"
             class="btn btn-success kg-btn"

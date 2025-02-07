@@ -8,8 +8,9 @@ function App() {
   return (
     <center className="todo-container">
       <AppName />
-      <AddTodo />
+
       <div className="items-container">
+        <AddTodo />
         <TodoItem1 />
         <TodoItem2 />
       </div>
