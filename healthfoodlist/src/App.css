@@ -1,0 +1,29 @@
+.foodcontainer {
+  margin: 20px;
+  width: 500px;
+  min-width: 100px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.heading {
+  color: red;
+}
+
+.foodinput {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.kg-item {
+  background-color: blueviolet;
+}
+
+.kg-span {
+  float: right;
+}
+
+span {
+  color: brown;
+}
