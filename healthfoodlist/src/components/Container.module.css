@@ -1,0 +1,9 @@
+/* css module for applying css */
+.foodcontainer {
+  margin: 20px;
+  width: 500px;
+  min-width: 100px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
