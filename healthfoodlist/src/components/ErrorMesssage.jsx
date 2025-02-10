@@ -1,6 +1,6 @@
-const ErrorMessage = ({ fooditem }) => {
+const ErrorMessage = ({ foodItem }) => {
   {
-    fooditem.length === 0 ? <h3>I am still hngry</h3> : null;
+    foodItem.length === 0 ? <h3>I am still hngry</h3> : null;
   }
 };
 export default ErrorMessage;

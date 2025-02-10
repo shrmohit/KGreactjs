@@ -6,14 +6,18 @@ import Container from "./components/Container";
 import FoodInput from "./components/FoodInput";
 
 function App() {
-  const [fooditem, setfooditem] = useState(["Sabji", "Milk", "Roti"]);
+  const [foodItem, setFoodItem] = useState(["Sabji", "Milk", "Roti"]);
+  // console.log(foodItem);
 
   // ... is a spread operator and it add current array value
   const onKeyDown = (event) => {
     if (event.key === "Enter") {
       let newFoodItem = event.target.value;
-      let newItems = [...fooditem, newFoodItem];
-      setfooditem(newItems);
+      // console.log(newFoodItem);
+      let newItems = [...foodItem, newFoodItem];
+      setFoodItem(newItems);
+      console.log(newItems);
+
       console.log("Food value entered is " + newFoodItem);
     }
   };
@@ -22,9 +26,9 @@ function App() {
     // example of passing container
     <Container>
       <h1 className="heading">Health Food</h1>
-      <ErrorMessage fooditem={fooditem} />
+      <ErrorMessage foodItem={foodItem} />
       <FoodInput handleKeyDown={onKeyDown} />
-      <ListOfFood fooditem={fooditem} />
+      <ListOfFood items={foodItem} />
     </Container>
   );
 }

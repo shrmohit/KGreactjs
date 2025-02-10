@@ -1,9 +1,6 @@
-import { useState } from "react";
 import styles from "./FoodInput.module.css";
 
 const FoodInput = ({ handleKeyDown }) => {
-  const [showtext, setshowtext] = useState();
-
   return (
     <input
       className={styles.foodinput}
