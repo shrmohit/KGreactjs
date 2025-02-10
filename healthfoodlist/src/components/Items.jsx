@@ -2,13 +2,9 @@ import React from "react";
 
 function Items({ foodItem, bought, handleBuyClicked }) {
   return (
-    <li
-      className={`list-group-item kg-item ${bought ? "active" : ""}`}
-      key={foodItem}
-    >
+    <li className={`list-group-item kg-item ${bought ? "active" : ""}`}>
       <span>{foodItem}</span>
       <button
-        type="button"
         className="btn btn-info kg-span"
         // onClick event handling
         onClick={handleBuyClicked}
