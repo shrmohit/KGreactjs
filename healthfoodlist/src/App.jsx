@@ -8,21 +8,23 @@ import FoodInput from "./components/FoodInput";
 function App() {
   const [fooditem, setfooditem] = useState(["Sabji", "Milk", "Roti"]);
 
-  let textshow = "food item entered by user";
-
-  const handleInputonChange = (event) => {
-    console.log(event.target.value);
-    textshow = event.target.value;
+  // ... is a spread operator and it add current array value
+  const onKeyDown = (event) => {
+    if (event.key === "Enter") {
+      let newFoodItem = event.target.value;
+      let newItems = [...fooditem, newFoodItem];
+      setfooditem(newItems);
+      console.log("Food value entered is " + newFoodItem);
+    }
   };
 
   return (
-    // example of passing caontainer
+    // example of passing container
     <Container>
       <h1 className="heading">Health Food</h1>
       <ErrorMessage fooditem={fooditem} />
-      <FoodInput handleInputonChange={handleInputonChange} />
-      <p>{textshow}</p>
-      <ListOfFood />
+      <FoodInput handleKeyDown={onKeyDown} />
+      <ListOfFood fooditem={fooditem} />
     </Container>
   );
 }

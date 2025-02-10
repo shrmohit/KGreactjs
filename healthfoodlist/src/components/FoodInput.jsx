@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./FoodInput.module.css";
 
-const FoodInput = ({ handleInputonChange }) => {
+const FoodInput = ({ handleKeyDown }) => {
   const [showtext, setshowtext] = useState();
 
   return (
@@ -10,7 +10,7 @@ const FoodInput = ({ handleInputonChange }) => {
       type="text"
       placeholder="Enter Food Name"
       //onchange event handling
-      onChange={handleInputonChange}
+      onKeyDown={handleKeyDown}
       // event.target.value is used for getting input tag value
     />
   );
