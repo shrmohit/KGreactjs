@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import Items from "./Items";
 
 function ListOfFood({ items }) {
-  const [activeItem, SetActiveItems] = useState([]);
+  const [activeItem, setActiveItems] = useState([]);
 
   const onBuyButton = (item, event) => {
     let newItems = [...activeItem, item];
-    SetActiveItems(newItems);
+    setActiveItems(newItems);
   };
 
   return (
