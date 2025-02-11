@@ -24,6 +24,14 @@ function App() {
 
   const handleNewItem = (itemName, itemDueData) => {
     console.log(`add New item ${itemName} on ${itemDueData}`);
+    const newTodoData = [
+      ...todoItems,
+      {
+        name: itemName,
+        date: itemDueData,
+      },
+    ];
+    settodoItems(newTodoData);
   };
 
   return (
