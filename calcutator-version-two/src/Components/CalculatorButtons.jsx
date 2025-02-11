@@ -1,7 +1,7 @@
 import React from "react";
 
-function CalculatorButtons() {
-  const buttonnumber = [
+function CalculatorButtons({ onButtonClicked }) {
+  const buttonValue = [
     "C",
     "1",
     "2",
@@ -23,12 +23,13 @@ function CalculatorButtons() {
 
   return (
     <div className="buttonsContainer">
-      {buttonnumber.map((num) => (
+      {buttonValue.map((buttonnumber) => (
         <button
           className="cal-button"
-          key={num}
+          key={buttonnumber}
+          onClick={() => onButtonClicked(buttonnumber)}
         >
-          {num}
+          {buttonnumber}
         </button>
       ))}
     </div>
