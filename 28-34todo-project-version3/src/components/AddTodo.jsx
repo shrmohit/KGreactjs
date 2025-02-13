@@ -14,11 +14,7 @@ function AddTodo({ onNewItem }) {
     setDueDate(event.target.value);
   };
 
-  const handleAddButtonClick = (event) => {
-    console.log(event);
-    // jab server ko data send nhi karna chate tab
-    event.preventDefault();
-
+  const handleAddButtonClick = () => {
     onNewItem(todoName, dueDate);
     setDueDate("");
     setTodoName("");
@@ -26,12 +22,7 @@ function AddTodo({ onNewItem }) {
 
   return (
     <div className="container text-center ">
-      // in form bydefault the button is called as submit button
-      <form
-        action=""
-        className="row kg-row"
-        onSubmit={handleAddButtonClick}
-      >
+      <div className="row kg-row">
         <div className="col-4">
           <input
             type="text"
@@ -49,13 +40,14 @@ function AddTodo({ onNewItem }) {
         </div>
         <div className="col-1">
           <button
-            type="submit"
+            type="button"
             className="btn btn-success kg-btn"
+            onClick={handleAddButtonClick}
           >
             <IoMdPersonAdd />
           </button>
         </div>
-      </form>
+      </div>
     </div>
   );
 }
