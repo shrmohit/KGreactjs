@@ -2,52 +2,51 @@ import React, { useRef, useState } from "react";
 import { IoMdPersonAdd } from "react-icons/io";
 
 function AddTodo({ onNewItem }) {
-  //useref hook and it is used directly with jsx element
-  const todoNameElement = useRef();
-  const todoDateElement = useRef();
+  const [todoName, setTodoName] = useState("");
+  const [dueDate, setDueDate] = useState("");
 
-  const handleAddButtonClick = (event) => {
-    event.preventDefault();
-    const todoName = todoNameElement.current.value;
-    const dueDate = todoNameElement.current.value;
-    todoNameElement.current.value = "";
-    todoNameElement.current.value = "";
+  const handleNameChange = (event) => {
+    setTodoName(event.target.value);
+  };
+
+  const handleDateChange = (event) => {
+    setDueDate(event.target.value);
+  };
+
+  const handleAddButtonClick = () => {
     onNewItem(todoName, dueDate);
+    setDueDate("");
+    setTodoName("");
   };
 
   return (
     <div className="container text-center ">
-      // in form bydefault the button is called as submit button
-      <form
-        action=""
-        className="row kg-row"
-        onSubmit={handleAddButtonClick}
-      >
+      <div className="row kg-row">
         <div className="col-4">
           <input
             type="text"
             placeholder="Enter todo here"
-            // it is ref element
-            ref={todoNameElement}
             value={todoName}
+            onChange={handleNameChange}
           />
         </div>
         <div className="col-4">
           <input
             type="date"
             value={dueDate}
-            ref={todoDateElement}
+            onChange={handleDateChange}
           />
         </div>
         <div className="col-1">
           <button
-            type="submit"
+            type="button"
             className="btn btn-success kg-btn"
+            onClick={handleAddButtonClick}
           >
             <IoMdPersonAdd />
           </button>
         </div>
-      </form>
+      </div>
     </div>
   );
 }
