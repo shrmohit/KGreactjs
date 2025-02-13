@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { IoMdPersonAdd } from "react-icons/io";
 
 function AddTodo({ onNewItem }) {
-  const [todoName, setTodoName] = useState();
-  const [dueDate, setDueDate] = useState();
+  const [todoName, setTodoName] = useState("");
+  const [dueDate, setDueDate] = useState("");
 
   const handleNameChange = (event) => {
     setTodoName(event.target.value);
@@ -42,7 +43,7 @@ function AddTodo({ onNewItem }) {
             className="btn btn-success kg-btn"
             onClick={handleAddButtonClick}
           >
-            ADD
+            <IoMdPersonAdd />
           </button>
         </div>
       </div>
