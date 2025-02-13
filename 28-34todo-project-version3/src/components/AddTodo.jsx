@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from "react";
+import { useRef, useContext } from "react";
 import { IoMdPersonAdd } from "react-icons/io";
 import { TodoItemsContext } from "../Store/todo-item-store";
 
