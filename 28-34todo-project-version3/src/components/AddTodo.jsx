@@ -10,10 +10,10 @@ function AddTodo({ onNewItem }) {
   const handleAddButtonClick = (event) => {
     event.preventDefault();
     const todoName = todoNameElement.current.value;
-    const dueDate = todoNameElement.current.value;
+    const dueDate = todoDateElement.current.value;
     todoNameElement.current.value = "";
-    todoNameElement.current.value = "";
-    console.log(`${todoName} ${dueDate}`);
+    todoDateElement.current.value = "";
+    // console.log(`${todoName} ${dueDate}`);
 
     onNewItem(todoName, dueDate);
   };

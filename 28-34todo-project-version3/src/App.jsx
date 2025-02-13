@@ -24,22 +24,26 @@ function App() {
   const [todoItems, settodoItems] = useState([]);
 
   const handleNewItem = (itemName, itemDueData) => {
-    console.log(`add New item ${itemName} on ${itemDueData}`);
-    const newTodoData = [
-      ...todoItems,
+    // console.log(`add New item ${itemName} on ${itemDueData}`);
+    // const newTodoData = [
+    //   ...todoItems,
+    //   {
+    //     name: itemName,
+    //     date: itemDueData,
+    //   },
+    // ];
+    settodoItems((currvalue) => [
+      ...currvalue,
       {
         name: itemName,
         date: itemDueData,
       },
-    ];
-    settodoItems(newTodoData);
+    ]);
   };
 
   const handleDeleteItem = (itemName) => {
     const newTodoData = todoItems.filter((item) => item.name !== itemName);
     settodoItems(newTodoData);
-    console.log(newTodoData);
-    console.log(itemName);
   };
 
   return (
