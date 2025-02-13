@@ -34,13 +34,11 @@ function AddTodo() {
             placeholder="Enter todo here"
             // it is ref element
             ref={todoNameElement}
-            // value={todoName}
           />
         </div>
         <div className="col-4">
           <input
             type="date"
-            // value={dueDate}
             ref={todoDateElement}
           />
         </div>
