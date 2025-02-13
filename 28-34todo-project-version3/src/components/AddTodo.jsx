@@ -20,7 +20,7 @@ function AddTodo({ onNewItem }) {
 
   return (
     <div className="container text-center ">
-      // in form bydefault the button is called as submit button
+      {/* // in form bydefault the button is called as submit button */}
       <form
         action=""
         className="row kg-row"
@@ -32,13 +32,13 @@ function AddTodo({ onNewItem }) {
             placeholder="Enter todo here"
             // it is ref element
             ref={todoNameElement}
-            value={todoName}
+            // value={todoName}
           />
         </div>
         <div className="col-4">
           <input
             type="date"
-            value={dueDate}
+            // value={dueDate}
             ref={todoDateElement}
           />
         </div>
