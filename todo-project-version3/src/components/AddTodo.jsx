@@ -2,26 +2,16 @@ import React, { useRef, useState } from "react";
 import { IoMdPersonAdd } from "react-icons/io";
 
 function AddTodo({ onNewItem }) {
-  const [todoName, setTodoName] = useState("");
-  const [dueDate, setDueDate] = useState("");
-  const noOfItems = useRef();
-
-  const handleNameChange = (event) => {
-    setTodoName(event.target.value);
-  };
-
-  const handleDateChange = (event) => {
-    setDueDate(event.target.value);
-  };
+  //useref hook and it is used directly with jsx element
+  const todoNameElement = useRef();
+  const todoDateElement = useRef();
 
   const handleAddButtonClick = (event) => {
-    console.log(event);
-    // jab server ko data send nhi karna chate tab
     event.preventDefault();
-
+    const todoName = todoNameElement.current.value;
+    const dueDate = todoNameElement.current.value;
+    console.log(`${todoName} duo on ${dueDate}`);
     onNewItem(todoName, dueDate);
-    setDueDate("");
-    setTodoName("");
   };
 
   return (
@@ -36,15 +26,16 @@ function AddTodo({ onNewItem }) {
           <input
             type="text"
             placeholder="Enter todo here"
+            // it is ref element
+            ref={todoNameElement}
             value={todoName}
-            onChange={handleNameChange}
           />
         </div>
         <div className="col-4">
           <input
             type="date"
             value={dueDate}
-            onChange={handleDateChange}
+            ref={todoDateElement}
           />
         </div>
         <div className="col-1">
