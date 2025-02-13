@@ -1,11 +1,13 @@
-import React, { useRef } from "react";
+import React, { useRef, useContext } from "react";
 import { IoMdPersonAdd } from "react-icons/io";
+import { TodoItemsContext } from "../Store/todo-item-store";
 
-function AddTodo({ onNewItem }) {
+function AddTodo() {
   //useref hook and it is used directly with jsx element
   // it control the reprint cycle
   const todoNameElement = useRef();
   const todoDateElement = useRef();
+  const { addNewItem } = useContext(TodoItemsContext);
 
   const handleAddButtonClick = (event) => {
     event.preventDefault();
@@ -15,7 +17,7 @@ function AddTodo({ onNewItem }) {
     todoDateElement.current.value = "";
     // console.log(`${todoName} ${dueDate}`);
 
-    onNewItem(todoName, dueDate);
+    addNewItem(todoName, dueDate);
   };
 
   return (
