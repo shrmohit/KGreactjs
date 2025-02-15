@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useState } from "react";
 import { IoMdPersonAdd } from "react-icons/io";
 
 function AddTodo({ onNewItem }) {
